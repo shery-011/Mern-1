@@ -1,4 +1,5 @@
 var joi = require("joi");
+const userService = require("../service/userService");
 
 const getUserschema = joi.object().keys({
   email: joi.string().email().required(),
@@ -23,6 +24,13 @@ const obj = {
   getUser: async (req, res) => {
     try {
       const validate = await getUserschema.validateAsync(req.query);
+      const user = userService.creatUser(validate);
+
+      if (user.error) {
+        return res.send({
+          error: user.error,
+        });
+      }
       return res.send({
         message: "getting User data",
         data: validate,
