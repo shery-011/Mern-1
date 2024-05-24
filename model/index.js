@@ -1,7 +1,7 @@
 const sequelize = require("../bin/dbConnectin");
 
-const users = require("./definations/users");
-const tasks = require("./definations/task");
+const users = require("./tables/users");
+const tasks = require("./tables/task");
 
 const models = { users, tasks };
 

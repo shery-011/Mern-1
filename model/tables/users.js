@@ -7,7 +7,7 @@ users.init(
   {
     userid: {
       primaryKey: true,
-      type: DataTypes.STRING(34),
+      type: DataTypes.STRING(255),
     },
     userName: {
       unique: true,
