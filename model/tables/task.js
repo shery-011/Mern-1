@@ -10,9 +10,17 @@ task.init(
       type: DataTypes.STRING(255),
     },
 
-    password: {
+    taskName: {
+      allowNull: false,
+      type: DataTypes.STRING(255),
+    },
+    description: {
       allowNull: false,
       type: DataTypes.STRING(1000),
+    },
+    userId: {
+      allowNull: false,
+      type: DataTypes.STRING(255),
     },
   },
   {

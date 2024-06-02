@@ -5,6 +5,11 @@ const tasks = require("./tables/task");
 
 const models = { users, tasks };
 
+// Relations
+
+users.hasMany(tasks, { foreignKey: "userid" });
+tasks.belongsTo(users, { foreignKey: "userid" ,});
+
 const db = {};
 
 db.sequelize = sequelize;
